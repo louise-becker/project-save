@@ -6,24 +6,28 @@ import imgMobile from '../assets/Mobile -Background.png';
 import imgDesktop from '../assets/Desktop - Background.png';
 
 const MainContainer = styled.div`
+  margin: 0;
+  padding: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Josefin Slab', serif;
+  background-color: #7f82f9;
 `;
 
 const Background = styled.div`
   background-image: url(${imgMobile});
-  z-index: -1;
+  z-index: 1;
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
-  @media (min-width: 768px) {
+
+  /* @media (min-width: 768px) {
     min-width: 100vw;
     background-image: url(${imgDesktop});
-  }
+  } */
 `;
 
 const HeaderContainer = styled.header`

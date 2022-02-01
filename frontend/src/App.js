@@ -28,8 +28,8 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Start />} />
-          <Route path="/quiz" element={<CurrentQuestion />} />
+          <Route path="/" exact element={<Start />} />
+          <Route path="/quiz" exact element={<CurrentQuestion />} />
           <Route path="/main" element={<Main />} />
           <Route path="/results" element={<Results />} />
           {/* <Route path="/suppliers" element={<Suppliers />} /> */}
