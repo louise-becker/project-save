@@ -71,16 +71,6 @@ const StyledLinkLogin = styled(Link)`
   }
   padding: 10px;
   margin: 10px;
-  /* background-color: #454343;
-
-  width: 70px;
-  height: 5 0px;
-  border-radius: 10px;
-  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
 `;
 
 const StyledLink = styled(Link)`
