@@ -8,6 +8,8 @@ import { CurrentQuestion } from 'components/CurrentQuestion';
 import Main from './components/Main';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
+import Results from 'components/Results';
+// import Suppliers from 'components/Suppliers';
 
 import user from './reducers/user';
 import saves from './reducers/saves';
@@ -29,6 +31,8 @@ export const App = () => {
           <Route path="/" element={<Start />} />
           <Route path="/quiz" element={<CurrentQuestion />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/results" element={<Results />} />
+          {/* <Route path="/suppliers" element={<Suppliers />} /> */}
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

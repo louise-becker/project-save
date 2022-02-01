@@ -1,0 +1,14 @@
+#body {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+}
+
+#styled-result-container {
+  font-size: large;
+  color: black;
+}
