@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Background,
   ButtonContainer,
@@ -7,9 +7,11 @@ import {
   StyledButton,
   StyledHeadline,
   StyledLink,
-  StyledLinkLogin,
+  StyledInvisibleLink,
   SignUpOrInWrapper,
 } from './Styled';
+import ProgressBar from './ProgressBar';
+import { quiz } from 'reducers/quiz';
 
 const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers);
@@ -18,10 +20,17 @@ const Summary = () => {
     return accumulator + +currentValue.answer;
   }, 0);
 
+  const dispatch = useDispatch();
+
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart());
+  };
+
   return (
     <>
       <MainContainer>
         <Background>
+          <ProgressBar></ProgressBar>
           <StyledHeadline style={{ display: 'flex', fontSize: '30px' }}>
             Your spend {sum} hours per week on things.
             {/* 
@@ -41,14 +50,14 @@ const Summary = () => {
               <h4 style={{ color: 'white' }}>
                 Do you want to see your results again?
               </h4>
-              <StyledButton style={{ backgroundColor: '#F9F67F' }}>
-                Yes!
-              </StyledButton>
-              {/* I want the button to send the current answer array (with all question text and the answer provided)
+              <StyledInvisibleLink to="/login">
+                <StyledButton style={{ backgroundColor: '#F9F67F' }}>
+                  Yes!
+                </StyledButton>
+                {/* I want the button to send the current answer array (with all question text and the answer provided)
               to the backend. HOW? */}
+              </StyledInvisibleLink>
             </ButtonContainer>
-            <StyledLinkLogin to="/login">SIGN-UP/IN</StyledLinkLogin>
-            <StyledLink to="/">Or do you want to restart the quiz</StyledLink>;
             <StyledLink
               to="/suppliers"
               style={{
@@ -61,6 +70,21 @@ const Summary = () => {
             >
               Press here if you want to SAVE this time instead?
             </StyledLink>
+            {/* <h4 style={{ color: 'white', display: 'block' }}>Or</h4> */}
+            <StyledInvisibleLink to="/">
+              <StyledButton
+                onClick={() => restartQuiz()}
+                style={{
+                  width: 'auto',
+                  fontFamily: 'Amatic SC',
+                  fontSize: '30px',
+                  color: 'black',
+                  marginTop: '60px',
+                }}
+              >
+                Restart the quiz
+              </StyledButton>
+            </StyledInvisibleLink>
           </SignUpOrInWrapper>
         </Background>
       </MainContainer>

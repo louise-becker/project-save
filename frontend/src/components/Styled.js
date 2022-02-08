@@ -260,3 +260,7 @@ export const SignUpOrInWrapper = styled.div`
     
   } */
 `;
+
+export const StyledInvisibleLink = styled(Link)`
+  text-decoration: none;
+`;

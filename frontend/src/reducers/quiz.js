@@ -90,8 +90,8 @@ export const quiz = createSlice({
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true;
-      } else if (state.currentQuestionIndex === state.questions.length - 2) {
-        state.lastQuestion = true;
+        // } else if (state.currentQuestionIndex === state.questions.length - 2) {
+        //   state.lastQuestion = true;
       } else {
         state.currentQuestionIndex += 1;
       }

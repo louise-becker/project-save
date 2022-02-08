@@ -2,9 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-// A progressbar in which we use the global state to render a dot and a line per answered question.
-// If the quiz is over we change the background color of the icon container to green.
-//This will then finish off the progress at the summary page.
+// Inspired by @ this is a progressbar in which the global state is used to render a dot and a line per answered question.
+
 const ProgressBar = () => {
   const questions = useSelector((store) => store.quiz.questions);
   const currentQuestionIndex = useSelector(
@@ -94,17 +93,17 @@ const IconContainer = styled.div`
   align-items: center;
   border-radius: 50%;
   color: white;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
 
   @media (min-width: 668px) and (max-width: 1024px) {
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     font-size: 30px;
   }
   @media (min-width: 1025px) {
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     font-size: 35px;
   }
 `;

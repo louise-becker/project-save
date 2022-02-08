@@ -2,13 +2,10 @@
 import React from 'react';
 import './Results.css';
 import ReactCardSlider from './ReactCardSlider';
+import { MainContainer, StyledHeadline } from './Styled';
 
 function Suppliers() {
-  const sliderClick = (slider) => {
-    //   alert('you have clicked a slide item');
-  };
-  // const AnswersSummary = () => {
-  //   const answers = useSelector((state) => state.quiz.answers)
+  const sliderClick = (slider) => {};
 
   const slides = [
     {
@@ -57,7 +54,15 @@ function Suppliers() {
       clickEvent: sliderClick,
     },
   ];
-  return <ReactCardSlider slides={slides} />;
+  return (
+    <MainContainer style={{ flexDirection: 'column' }}>
+      <StyledHeadline style={{ backgroundColor: '#F9F67F' }}>
+        {' '}
+        Here are your Time Savers
+      </StyledHeadline>
+      <ReactCardSlider slides={slides} />
+    </MainContainer>
+  );
 }
 
 export default Suppliers;

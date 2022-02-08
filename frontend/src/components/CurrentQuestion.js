@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from '../reducers/quiz';
-import Summary from './Summary';
 import ProgressBar from './ProgressBar';
 import {
   Background,
@@ -10,13 +9,15 @@ import {
   StyledButton,
   StyledQuestionHeader,
 } from './Styled';
+import NextButton from './NextButton';
 
 export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-  const ifQuizOver = useSelector((state) => state.quiz.quizOver);
-  const ifLastQuestion = useSelector((state) => state.quiz.lastQuestion);
+  const currentQuestionIndex = useSelector(
+    (store) => store.quiz.currentQuestionIndex
+  );
 
   const dispatch = useDispatch();
 
@@ -30,15 +31,6 @@ export const CurrentQuestion = () => {
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
-
-  //dispatch next question in the questions array, ie dispatch the redux action "goToNextQuestion" from the quiz reducer.
-  const nextQuestion = () => {
-    dispatch(quiz.actions.goToNextQuestion());
-  };
-
-  if (ifQuizOver) {
-    return <Summary />;
-  }
 
   return (
     <MainContainer>
@@ -55,44 +47,11 @@ export const CurrentQuestion = () => {
             </StyledButton>
           ))}
         </ButtonContainer>
-        {ifLastQuestion ? (
-          <StyledButton
-            onClick={() => nextQuestion()}
-            style={{
-              backgroundColor: '#F9F67F',
-              width: 'auto',
-            }}
-          >
-            View Results
-          </StyledButton>
-        ) : (
-          <StyledButton
-            disabled={!answers}
-            onClick={() => nextQuestion()}
-            style={{
-              backgroundColor: '#F9F67F',
-              width: 'auto',
-            }}
-          >
-            Next question
-          </StyledButton>
-        )}
+        <NextButton
+          answers={answers}
+          currentQuestionIndex={currentQuestionIndex}
+        />
       </Background>
     </MainContainer>
   );
 };
-
-// dispatch the redux action "restartQuiz" from the quiz reducer.
-//  const restartQuiz = () => {
-//   dispatch(quiz.actions.restart());
-// };
-
-/* <StyledButton
-            onClick={() => restartQuiz()}
-            style={{
-              backgroundColor: '#F9F67F',
-              width: 'auto',
-            }}
-          >
-            Or do you want to restart the quiz
-          </StyledButton> */
