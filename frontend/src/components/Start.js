@@ -1,133 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import styled from 'styled-components/macro';
-
-import imgMobile from '../assets/Mobile -Background.png';
-import imgDesktop from '../assets/Desktop - Background.png';
-
-const MainContainer = styled.div`
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Josefin Slab', serif;
-  background-color: #7f82f9;
-`;
-
-const Background = styled.div`
-  background-image: url(${imgMobile});
-  z-index: 1;
-  height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-
-  /* @media (min-width: 768px) {
-    min-width: 100vw;
-    background-image: url(${imgDesktop});
-  } */
-`;
-
-const HeaderContainer = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  font-size: 20px;
-  margin: 20px;
-  text-decoration: none;
-`;
-
-const StyledHeader = styled.h1`
-  color: white;
-  font-family: 'Amatic SC', cursive;
-  font-size: 130px;
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-`;
-
-const OptionsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* align-items: space-between; */
-  color: white;
-  font-size: 20px;
-
-  text-decoration: none;
-  /* .button {
-    border-radius: 10%;
-    margin: 10px;
-  } */
-`;
-
-const StyledLinkLogin = styled(Link)`
-  text-decoration: none;
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-    color: white;
-  }
-  padding: 10px;
-  margin: 10px;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-    color: white;
-  }
-  padding: 10px;
-  margin: 10px;
-  background-color: #454343;
-
-  width: 70px;
-  height: 5 0px;
-  border-radius: 10px;
-  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledAnchor = styled.a`
-  text-decoration: none;
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-    color: white;
-  }
-  padding: 10px;
-  margin: 10px;
-  background-color: #454343;
-  width: 70px;
-  height: 50px;
-  border-radius: 10px;
-  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
+import {
+  BackgroundStart,
+  MainContainer,
+  StyledLink,
+  StyledLinkLogin,
+  StyledAnchor,
+  StyledHeader,
+} from './Styled';
 
 const Start = () => {
   return (
     <MainContainer>
-      <Background>
+      <BackgroundStart>
         <HeaderContainer>
           <StyledLinkLogin to="/login">SIGN-UP/IN</StyledLinkLogin>
         </HeaderContainer>
@@ -139,9 +25,29 @@ const Start = () => {
             PLANET
           </StyledAnchor>
         </OptionsContainer>
-      </Background>
+      </BackgroundStart>
     </MainContainer>
   );
 };
 
 export default Start;
+
+// --- Styled Components ---
+
+const HeaderContainer = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-size: 20px;
+  margin: 20px;
+  text-decoration: none;
+`;
+
+const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+`;

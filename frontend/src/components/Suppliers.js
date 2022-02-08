@@ -1,128 +1,63 @@
-// import React from 'react';
-// import styled from 'styled-components';
-// import websites from '../websites'
+// A big thank you to https://github.com/JoeyAlpha5 for the help with the Card Slider
+import React from 'react';
+import './Results.css';
+import ReactCardSlider from './ReactCardSlider';
 
-// const cardWidth = 320;
-// const borderRadius = 8;
-// const transition = 'all 0.45s ease';
+function Suppliers() {
+  const sliderClick = (slider) => {
+    //   alert('you have clicked a slide item');
+  };
+  // const AnswersSummary = () => {
+  //   const answers = useSelector((state) => state.quiz.answers)
 
-// const Screenshot = styled.figure`
-//   z-index: 200;
-//   position: relative;
-//   margin: 0;
-//   padding: 0;
-//   width: ${cardWidth}px;
-//   height: 200px;
-//   background: url(${(props) => props.image}) 0 0 no-repeat;
-//   background-size: cover;
-//   border-radius: ${borderRadius}px ${borderRadius}px 0 0;
-//   overflow: hidden;
-//   backface-visibility: hidden;
-//   transition: ${transition};
+  const slides = [
+    {
+      image:
+        'https://image.freepik.com/free-photo/hands-holding-cleaning-tools-solutions_53876-148192.jpg',
+      title: 'Cleaning',
+      description: '400 SEK/hour',
+      clickEvent: sliderClick,
+    },
+    {
+      image:
+        'https://image.freepik.com/free-photo/delivery-concept-handsome-african-american-delivery-man-carrying-package-box-grocery-food-drink-from-store-isolated-grey-studio-background-copy-space_1258-1232.jpg',
+      title: 'Groceries',
+      description: '150 SEK',
+      clickEvent: sliderClick,
+    },
+    {
+      image:
+        'https://image.freepik.com/free-photo/thoughtful-brunette-woman-dressed-casual-t-shirt-uses-mobile-phone-making-shopping-online-sells-items-clothes-internet-poses-against-white-background-people-clothing-concept_273609-56796.jpg',
+      title: 'Sell Something',
+      description: 'XX SEK',
+      clickEvent: sliderClick,
+    },
+    {
+      image: 'https://picsum.photos/500/400',
+      title: 'Digital Detox',
+      description: 'XX SEK',
+      clickEvent: sliderClick,
+    },
+    {
+      image: 'https://picsum.photos/200/300',
+      title: 'Ready Meals',
+      description: 'XX SEK',
+      clickEvent: sliderClick,
+    },
+    {
+      image: 'https://picsum.photos/800/700',
+      title: 'Weekly Cooking',
+      description: 'XX SEK',
+      clickEvent: sliderClick,
+    },
+    {
+      image: 'https://picsum.photos/300/400',
+      title: 'Robot Cleaner',
+      description: 'XX SEK',
+      clickEvent: sliderClick,
+    },
+  ];
+  return <ReactCardSlider slides={slides} />;
+}
 
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background: rgba(0, 0, 0, 0);
-//     transition: ${transition};
-//   }
-// `;
-
-// const Content = styled.div`
-//   z-index: 200;
-//   position: relative;
-//   padding: 20px 20px 30px;
-// `;
-
-// const Title = styled.span`
-//   display: block;
-//   margin-bottom: 4px;
-//   font-size: 1.25em;
-//   font-weight: 500;
-//   transition: ${transition};
-// `;
-
-// const Description = styled.span`
-//   display: block;
-//   font-size: 0.875em;
-//   color: #999999;
-//   transition: ${transition};
-//   transition-delay: 0.04s;
-// `;
-
-// const BottomBar = styled.span`
-//   position: absolute;
-//   left: 0;
-//   bottom: 0;
-//   width: 100%;
-//   height: 10px;
-//   background: ${(props) => props.background && props.background};
-//   border-radius: 0 0 ${borderRadius}px ${borderRadius}px;
-//   transition: ${transition};
-// `;
-
-// const Style = styled.button`
-//   position: relative;
-//   flex-shrink: 0;
-//   width: ${cardWidth}px;
-//   text-align: left;
-//   background: #ffffff;
-//   border-radius: ${borderRadius}px;
-//   cursor: pointer;
-//   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12), 0 20px 20px -10px rgba(0, 0, 0, 0.125);
-//   transition: ${transition};
-
-//   &:hover {
-//     transform: scale(1.04);
-
-//     ${Title},
-//     ${Description},
-//     ${BottomBar} {
-//       transform: scale(0.92);
-//     }
-
-//     ${Title} {
-//       transform: translateY(-10px);
-//     }
-
-//     ${Description} {
-//       transform: translateY(-12px);
-//     }
-
-//     ${BottomBar} {
-//       border-radius: ${borderRadius - 2}px;
-//       transform: translateY(-14px) scale(0.9);
-//     }
-
-//     ${Screenshot} {
-//       transform: translateY(4px) scale(0.92);
-//       border-radius: ${borderRadius - 2}px;
-
-//       &::before {
-//         background: rgba(0, 0, 0, 0.1);
-//       }
-//     }
-//   }
-// `;
-// const Suppliers = () => {
-// websites.map((website, index) => (
-//     <><Style>;
-//         <Screenshot image={image} />;
-//         <Content>;
-//             <Title>{title}</Title>;
-//             <Description>{description}</Description>
-//             <BottomBar background={hexa} />
-//         </Content>
-//     </Style>
-//     return (<Card
-//             key={website.description}
-//             hexa={website.hexa}
-//             title={website.title}
-//             description={website.description}
-//             image={website.image} /></>)
-// };
-// export default Suppliers;
+export default Suppliers;

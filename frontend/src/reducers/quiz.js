@@ -1,23 +1,38 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const questions = [
+  {
+    id: 1,
+    questionText: 'How much time do you spend cleaning/week?',
+    options: ['4', '5', '7', '8', '9', '14'],
+
+    // to differentiate each question the bg color changes
+    // backgroundColor: '#',
+    // imgUrl: `${img}`
+  },
+  {
+    id: 2,
+    questionText: 'How much time do you spend cooking/week?',
+    options: ['4', '5', '7', '8', '9', '14'],
+  },
+  {
+    id: 3,
+    questionText: 'How much time do you spend scrolling your phone/week?',
+    options: ['4', '5', '7', '8', '9', '14'],
+  },
+  {
+    id: 4,
+    questionText: 'How much time do you live/week?',
+    options: ['4', '5', '7', '8', '9', '14'],
+  },
+];
+
 const initialState = {
-  questions: [
-    {
-      id: 1,
-      questionText: 'How much time do you spend cleaning/week?',
-      options: ['0h', '1h', '2-3h', '4-5h', 'No idea'],
-      correctAnswerIndex: 0,
-    },
-    {
-      id: 2,
-      questionText: 'How much time do you spend cooking/week?',
-      options: ['0h', '1-3h', '4-6h', '7-8h', 'No idea'],
-      correctAnswerIndex: 2,
-    },
-  ],
+  questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  // quizStart: false,
 };
 
 export const quiz = createSlice({
@@ -34,7 +49,6 @@ export const quiz = createSlice({
      *    question    - A copy of the entire question object, to make it easier to show
      *                  details about the question in your UI.
      *    answer      - The answer string.
-     *    isCorrect   - true/false if the answer was the one which the question says is correct.
      *
      * When dispatching this action, you should pass an object as the payload with `questionId`
      * and `answerIndex` keys. See the readme for more details.
@@ -63,7 +77,6 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex,
       });
     },
 
@@ -77,6 +90,8 @@ export const quiz = createSlice({
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true;
+      } else if (state.currentQuestionIndex === state.questions.length - 2) {
+        state.lastQuestion = true;
       } else {
         state.currentQuestionIndex += 1;
       }
@@ -91,6 +106,9 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState;
+    },
+    startTheQuiz: (state) => {
+      state.quizStart = true;
     },
   },
 });
