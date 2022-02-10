@@ -1,17 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from '../reducers/quiz';
-import ProgressBar from './ProgressBar';
+import ProgressLine from '../components/ProgressLine';
 import {
   Background,
   ButtonContainer,
   MainContainer,
   StyledButton,
   StyledQuestionHeader,
-} from './Styled';
-import NextButton from './NextButton';
+} from '../components/Styled';
+import NextButton from '../components/NextButton';
 
-export const CurrentQuestion = () => {
+export const QuestionPage = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
@@ -35,7 +35,7 @@ export const CurrentQuestion = () => {
   return (
     <MainContainer>
       <Background>
-        <ProgressBar></ProgressBar>
+        <ProgressLine></ProgressLine>
         <StyledQuestionHeader>{question.questionText}</StyledQuestionHeader>
         <ButtonContainer>
           {question.options.map((item, index) => (

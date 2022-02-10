@@ -6,7 +6,7 @@ import { API_URL } from '../utils/constants';
 import saves from '../reducers/saves';
 
 const Main = () => {
-  const savesItems = useSelector((store) => store.saves.items);
+  const savesItems = useSelector((state) => state.quiz.answers);
   const accessToken = useSelector((store) => store.user.accessToken);
 
   const dispatch = useDispatch();

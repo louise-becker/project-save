@@ -1,0 +1,120 @@
+{
+  "timesavers": [
+    {
+      "category": "Cleaning",
+      "suppliers": [
+        {
+          "title": "Hemfrid",
+          "description": "255 SEK/h",
+          "href": "https://www.hemfrid.se/",
+          "image": ""
+        },
+        {
+          "title": "StädbolagEtt",
+          "description": "230 SEK/h",
+          "href": "https://www.stadbolagett.se/",
+          "image": ""
+        },
+        {
+          "title": "Freska",
+          "description": "245 SEK/h",
+          "href": "https://www.freska.se/",
+          "image": ""
+        },
+        {
+          "title": "Vardagsfrid",
+          "description": "231kr SEK/h",
+          "href": "https://vardagsfrid.se/",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "category": "Groceries",
+      "suppliers": [
+        {
+          "title": "Willys",
+          "description": "150 SEK",
+          "href": "https://www.willys.se/",
+          "image": ""
+        },
+        {
+          "title": "Mathem",
+          "description": "0 SEK",
+          "href": "https://www.mathem.se/",
+          "image": ""
+        },
+        {
+          "title": "Willys",
+          "description": "150 SEK",
+          "href": "https://www.willys.se/",
+          "image": ""
+        },
+        {
+          "title": "Willys",
+          "description": "150 SEK",
+          "href": "https://www.willys.se/",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "category": "Digital Detox",
+      "suppliers": [
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        },
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        },
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        },
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        }
+      ]
+    },
+    {
+      "category": "Ready Meals",
+      "suppliers": [
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        },
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        },
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        },
+        {
+          "title": "text",
+          "description": "number SEK/h",
+          "href": "https://www./",
+          "image": ""
+        }
+      ]
+    }
+  ]
+}

@@ -9,10 +9,11 @@ import {
   InputWrapper,
   MainContainer,
   SignUpOrInWrapper,
-  StyledLinkLogin,
-} from './Styled';
+  StyledLink,
+  StyledHeader,
+} from '../components/Styled';
 
-const Login = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [mode, setMode] = useState('signup');
@@ -24,7 +25,7 @@ const Login = () => {
 
   useEffect(() => {
     if (accessToken) {
-      navigate('/');
+      navigate('/start');
     }
   }, [accessToken, navigate]);
 
@@ -65,9 +66,15 @@ const Login = () => {
     <>
       <MainContainer>
         <BackgroundStart>
-          <div>
-            <StyledLinkLogin to="/">{'<- Back to the Quiz'}</StyledLinkLogin>
-          </div>
+          <StyledHeader
+            style={{
+              fontSize: '100px',
+              color: '#F97FBF',
+              marginTop: '50px',
+            }}
+          >
+            SAVE
+          </StyledHeader>
           <SignUpOrInWrapper>
             <label htmlFor="signup">Signup</label>
             <input
@@ -109,6 +116,19 @@ const Login = () => {
                 Submit
               </button>
             </form>
+            <StyledLink
+              to="/start"
+              style={{
+                fontSize: '20px',
+                backgroundColor: '#7FF9B9',
+                marginTop: '20px',
+                borderRadius: '45px',
+                width: '180px',
+                color: 'black',
+              }}
+            >
+              Continue Incognito
+            </StyledLink>
           </InputWrapper>
         </BackgroundStart>
       </MainContainer>
@@ -116,4 +136,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

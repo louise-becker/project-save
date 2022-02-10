@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-// Inspired by @ this is a progressbar in which the global state is used to render a dot and a line per answered question.
+// I thought this was the best progressbat ever, so I copied it with some alterations.
 
-const ProgressBar = () => {
+const ProgressLine = () => {
   const questions = useSelector((store) => store.quiz.questions);
   const currentQuestionIndex = useSelector(
     (store) => store.quiz.currentQuestionIndex
@@ -12,10 +12,10 @@ const ProgressBar = () => {
   const isQuizOver = useSelector((store) => store.quiz.quizOver);
 
   return (
-    <ProgressBarContainer>
+    <ProgressLineContainer>
       {questions.map((question, index) => {
         return (
-          <ProgressBarWrapper key={question.id}>
+          <ProgressLineWrapper key={question.id}>
             <Dot
               style={{
                 backgroundColor:
@@ -28,7 +28,7 @@ const ProgressBar = () => {
                   currentQuestionIndex >= index ? '#7FF9B9' : '#f0f0f0',
               }}
             ></Line>
-          </ProgressBarWrapper>
+          </ProgressLineWrapper>
         );
       })}
 
@@ -37,19 +37,19 @@ const ProgressBar = () => {
           backgroundColor: isQuizOver ? '#7FF9B9' : '#f0f0f0',
         }}
       ></IconContainer>
-    </ProgressBarContainer>
+    </ProgressLineContainer>
   );
 };
 
 // ------------------------------Styled component ------------------------------------
 
-const ProgressBarWrapper = styled.section`
+const ProgressLineWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const ProgressBarContainer = styled.section`
+const ProgressLineContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,4 +107,4 @@ const IconContainer = styled.div`
     font-size: 35px;
   }
 `;
-export default ProgressBar;
+export default ProgressLine;

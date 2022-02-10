@@ -16,7 +16,7 @@ const NextButton = ({ answers, currentQuestionIndex }) => {
   if (!quizOver && currentQuestionIndex + 1 === questions.length) {
     return (
       <ButtonContainer>
-        <StyledInvisibleLink to="/summary">
+        <StyledInvisibleLink to="/results">
           <StyledButton
             onClick={() => nextQuestion()}
             style={{

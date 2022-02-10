@@ -1,12 +1,16 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import imgMobile from '../assets/MobileBG.png';
 import imgDesktop from '../assets/DesktopBG.png';
 import { Link } from 'react-router-dom';
 
 // --- Only Styled Components ---
+const colorBlue = '#7F82F9';
+const colorPink = '#F97FBF';
+// const colorYellow = '#F9F67F';
+const colorGreen = '#7FF9B9';
 
 export const Background = styled.div`
-  background-color: #7f82f9;
+  background-color: ${colorBlue};
   z-index: 1;
   height: 100vh;
   width: 100vw;
@@ -46,14 +50,12 @@ export const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7f82f9;
+  background-color: ${colorBlue};
 `;
 
 export const ButtonContainer = styled.div`
   margin: 0;
   padding: 0;
-  /* width: 100vw;
-  height: 100vh; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -73,7 +75,7 @@ export const StyledLink = styled(Link)`
   }
   padding: 10px;
   margin: 10px;
-  background-color: #f97fbf;
+  background-color: ${colorPink};
   width: 110px;
   height: 5 0px;
   border-radius: 10px;
@@ -99,7 +101,7 @@ export const StyledButton = styled.button`
   }
   padding: 10px;
   margin: 10px;
-  background-color: #f97fbf;
+  background-color: ${colorPink};
   width: 70px;
   height: 5 0px;
   border-radius: 10px;
@@ -124,7 +126,7 @@ export const StyledAnchor = styled.a`
   }
   padding: 10px;
   margin: 10px;
-  background-color: #f97fbf;
+  background-color: ${colorPink};
   width: 110px;
   height: 5 0px;
   border-radius: 10px;
@@ -145,6 +147,7 @@ export const StyledHeader = styled.h1`
   display: flex;
   justify-content: center;
   margin: 10px;
+  margin-top: 80px;
 `;
 
 export const StyledQuestionHeader = styled.h1`
@@ -155,9 +158,7 @@ export const StyledQuestionHeader = styled.h1`
   transform: rotate(5deg);
   padding: 10px;
   margin: 30px;
-  background-color: #7ff9b9;
-  /* width: 70px; */
-  /* height: 5 0px; */
+  background-color: ${colorGreen};
   border-radius: 10px;
   box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
   display: flex;
@@ -174,9 +175,7 @@ export const StyledHeadline = styled.h1`
   transform: rotate(-5deg);
   padding: 10px;
   margin: 30px;
-  background-color: #f97fbf;
-  /* width: 70px; */
-  /* height: 5 0px; */
+  background-color: ${colorPink};
   border-radius: 10px;
   box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
   display: flex;
@@ -218,7 +217,7 @@ export const InputWrapper = styled.div`
     letter-spacing: 2.5px;
     font-weight: 700;
     color: #000;
-    background-color: #f97fbf;
+    background-color: ${colorPink};
     border: none;
     border-radius: 45px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -228,10 +227,6 @@ export const InputWrapper = styled.div`
     margin: 10px 100px 10px 100px;
     font-family: 'Arial ';
     font-family: 'Amatic SC', cursive;
-    /* @media (min-width: 768px) {
-      width: 20vw;
-      margin: 0 auto;
-    } */
   }
   .input-field {
     background: #fff;
@@ -252,15 +247,61 @@ export const SignUpOrInWrapper = styled.div`
   justify-content: center;
   flex-direction: row;
   text-align: center;
-  margin-top: 30px;
   max-width: 500px;
   font-family: 'Josefin Slab', serif;
   font-size: 20px;
-  /* input[type='radio'] {
-    
-  } */
 `;
 
 export const StyledInvisibleLink = styled(Link)`
+  text-decoration: none;
+`;
+
+export const StyledFigure = styled.figure`
+  z-index: 200;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  background: url(${(props) => props.image}) 0 0 no-repeat;
+  background-size: cover;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: 'all 0.45s ease';
+`;
+
+export const StyledButtonOptions = styled.a`
+  color: white;
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:checked  {
+    text-decoration: none;
+    color: black;
+  }
+  padding: 10px;
+  margin: 10px;
+  background-color: #f97fbf;
+  width: 130px;
+  height: 90 px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Amatic SC';
+  font-size: 30px;
+`;
+
+export const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
   text-decoration: none;
 `;
